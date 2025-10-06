@@ -1,0 +1,275 @@
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0B0B0F;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #11131A;
+  border-bottom: 2px solid #2A2D3A;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h1 {
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo h1 span {
+  color: #9D6BFF;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #BFBFBF;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #9D6BFF;
+}
+
+/* ===== Banner ===== */
+.banner {
+/* Frame 5 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 167px 98px;
+gap: 39px;
+
+position: relative;
+width: 1440px;
+height: 920px;
+
+background: url('cyberpunk.jpg') no-repeat center center/cover;
+
+
+
+
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.7);
+}
+
+.banner-content {
+
+  color: #fff;
+}
+
+.banner-content h2 {
+  font-size: 100px;
+  /* Найкращі Steam Ключі */
+
+width: 793px;
+height: 228px;
+
+
+font-style: normal;
+font-weight: 600;
+font-size: 96px;
+line-height: 114px;
+
+background: linear-gradient(90deg, #FFFFFF 0%, #1F98EE 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+margin: 0px;
+padding: 0px;
+}
+/* ===== Banner ===== */
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 167px 98px;
+  gap: 39px;
+  width: 100%;
+  min-height: 920px;
+  background: url('cyberpunk.jpg') no-repeat center center/cover;
+  overflow: hidden;
+}
+
+/* затемнення через псевдоелемент */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* рівень затемнення */
+  z-index: 0;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1; /* щоб текст був над затемненням */
+  color: #fff;
+}
+
+.banner-content h2 {
+  font-size: 96px;
+  margin-block-start: 0px;
+  font-weight: 700;
+  line-height: 114px;
+  background: linear-gradient(90deg, #FFFFFF 0%, #1F98EE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.banner-content p {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #e4e3db;
+}
+
+.banner-content h2 span {
+  color: #00CFFF;
+}
+
+.banner-content p {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #e4e3db;
+}
+
+/* ===== Offers ===== */
+.offers {
+  max-width: 1200px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.offers h3 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #9D6BFF;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(157, 107, 255, 0.4);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.banner-content h1{
+
+    font-size: 100px;
+
+
+}
+.discount {
+  position: absolute;
+  bottom: 45%;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  left: 0%;
+  background: #000000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 0px;
+  font-weight: 600;
+  font-size: 16px;
+  opacity: 0.;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #11131A;
+  color: #BFBFBF;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .banner-content h2 {
+    font-size: 26px;
+  }
+
+  .banner-content p {
+    font-size: 18px;
+  }
+
+  .card img {
+    height: 220px;
+  }
+}
