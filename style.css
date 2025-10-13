@@ -1,0 +1,538 @@
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0B0B0F;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+.header {
+  z-index: 1000;
+  position: sticky;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #11131A;
+  border-bottom: 2px solid #2A2D3A;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h1 {
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo h1 span {
+  color: #9D6BFF;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #BFBFBF;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #9D6BFF;
+}
+
+/* ===== Banner ===== */
+.banner {
+/* Frame 5 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 167px 98px;
+gap: 39px;
+
+position: relative;
+width: 1440px;
+height: 920px;
+
+background: url('cyberpunk.jpg') no-repeat center center/cover;
+
+
+
+
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.7);
+}
+
+.banner-content {
+
+  color: #fff;
+}
+
+.banner-content h2 {
+  font-size: 100px;
+  /* Найкращі Steam Ключі */
+
+width: 793px;
+height: 228px;
+
+
+font-style: normal;
+font-weight: 600;
+font-size: 96px;
+line-height: 114px;
+
+background: linear-gradient(90deg, #FFFFFF 0%, #1F98EE 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+margin: 0px;
+padding: 0px;
+}
+/* ===== Banner ===== */
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 167px 98px;
+  gap: 39px;
+  width: 100%;
+  min-height: 920px;
+  background: url('cyberpunk.jpg') no-repeat center center/cover;
+  overflow: hidden;
+}
+
+/* затемнення через псевдоелемент */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* рівень затемнення */
+  z-index: 0;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1; /* щоб текст був над затемненням */
+  color: #fff;
+}
+
+.banner-content h2 {
+  font-size: 96px;
+  margin-block-start: 0px;
+  font-weight: 700;
+  line-height: 114px;
+  background: linear-gradient(90deg, #FFFFFF 0%, #1F98EE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.banner-content p {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #e4e3db;
+}
+
+.banner-content h2 span {
+  color: #00CFFF;
+}
+
+.banner-content p {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #e4e3db;
+}
+
+/* ===== Offers ===== */
+.offers {
+  max-width: 1200px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.offers h3 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #9D6BFF;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(157, 107, 255, 0.4);
+}
+
+.card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.banner-content h1{
+
+    font-size: 100px;
+
+
+}
+.discount {
+  position: absolute;
+  bottom: 45%;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  left: 0%;
+  background: #000000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 0px;
+  font-weight: 600;
+  font-size: 16px;
+  opacity: 0.;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #11131A;
+  color: #BFBFBF;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .banner-content h2 {
+    font-size: 26px;
+  }
+
+  .banner-content p {
+    font-size: 18px;
+  }
+
+  .card img {
+    height: 220px;
+  }
+}
+/* ===== Game Page ===== */
+.game-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 10%;
+  min-height: 90vh;
+  background: radial-gradient(circle at top, #12141C 0%, #0B0B0F 80%);
+}
+
+.game-details {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+  background: linear-gradient(145deg, #151821, #0F0F14);
+  border: 1px solid #2A2D3A;
+  box-shadow: 0 0 25px rgba(157, 107, 255, 0.2);
+  border-radius: 20px;
+  padding: 50px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.game-details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(157, 107, 255, 0.4);
+}
+
+/* зображення гри */
+.game-image {
+  width: 420px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease;
+}
+
+.game-image:hover {
+  transform: scale(1.03);
+}
+
+/* текстова частина */
+.game-text {
+  max-width: 550px;
+}
+
+.game-text h2 {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #FFFFFF 0%, #9D6BFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 25px;
+}
+
+.game-text p {
+  color: #BFBFBF;
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* блок ціни і знижки */
+.game-text p strong {
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.discount2 {
+  color: #FF4B91;
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: 8px;
+  background: rgba(255, 75, 145, 0.1);
+  border: 1px solid rgba(255, 75, 145, 0.3);
+  border-radius: 6px;
+  padding: 3px 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.discount2:hover {
+  background: rgba(255, 75, 145, 0.3);
+  transform: scale(1.1);
+}
+
+/* кнопка покупки */
+.buy-btn {
+  background: linear-gradient(90deg, #9D6BFF, #00B4D8);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.buy-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+  transition: left 0.5s;
+}
+
+.buy-btn:hover::before {
+  left: 100%;
+}
+
+.buy-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(157, 107, 255, 0.5);
+}
+
+/* Анімації */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 950px) {
+  .game-details {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 25px;
+  }
+
+  .game-image {
+    width: 90%;
+  }
+
+  .game-text h2 {
+    font-size: 36px;
+  }
+
+  .buy-btn {
+    font-size: 16px;
+  }
+}
+
+.new{
+
+
+  position: absolute;
+  font-weight: 800;
+  top: -4px;
+  left: 62%;
+  color: #ff0000;
+  background: #ffffff;
+  width: 115px;
+  height: 50px;
+  opacity: 0.9;
+  border-radius: 5px;
+  rotate: 45deg;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 25px;
+  font-family: cursive;
+
+}
+
+.contact-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1 1 45%;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3,
+.contact-form h3 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.contact-form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+}
+
+.map-container {
+  margin-top: 40px;
+}
+
+.map-container h3 {
+  margin-bottom: 15px;
+  color: #444;
+}
