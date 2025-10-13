@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Інформація про гру | Frame+</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+          <img src="images/logo.png" alt="Frame+ Logo">
+          <h1>Frame<span>+</span></h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="#">Магазин</a></li>
+            <li><a href="#">Новинки</a></li>
+            <li><a href="#">Контакти</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <main class="game-page">
+    <div id="game-info"></div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Frame+. Усі права захищено.</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const gameName = params.get('name');
+
+    const games = {
+      gta: {
+        title: 'Grand Theft Auto V',
+        image: 'gta5.jpg',
+        description: 'Одна з найпопулярніших ігор з відкритим світом. Створюй хаос або заробляй мільйони у Лос-Сантосі.',
+        price: '299 ₴',
+        discount: '-40%'
+      },
+      peak: {
+        title: 'Peak',
+        image: 'peak.jpg',
+        description: 'Захоплива пригодницька гра з елементами виживання та красивим світом.',
+        price: '249 ₴',
+        discount: '-25%'
+      },
+      mudrunner: {
+        title: 'MudRunner',
+        image: 'mudrunner.png',
+        description: 'Випробуй себе як водій у надважких умовах бездоріжжя!',
+        price: '199 ₴',
+        discount: '-70%'
+      },
+      omori: {
+        title: 'OMORI',
+        image: 'omori.jpg',
+        description: 'Емоційна RPG з унікальним сюжетом і глибоким психологічним підтекстом.',
+        price: '349 ₴',
+        discount: '-30%'
+      }
+    };
+
+    const game = games[gameName];
+    const container = document.getElementById('game-info');
+
+    if (game) {
+      container.innerHTML = `
+        <div class="game-details">
+          <img src="${game.image}" alt="${game.title}" class="game-image">
+          <div class="game-text">
+            <h2>${game.title}</h2>
+            <p>${game.description}</p>
+            <p><strong>Ціна:</strong> ${game.price} <span class="discount2">${game.discount}</span></p>
+            <button class="buy-btn">Купити зараз</button>
+          </div>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `<p>Гру не знайдено 😢</p>`;
+    }
+  </script>
+</body>
+</html>
